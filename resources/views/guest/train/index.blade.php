@@ -6,9 +6,8 @@
 
     <h1>Beware Trenitalia</h1>
 
-    @foreach($trainDataList as $train)
 
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                 <th scope="col">company</th>
@@ -23,19 +22,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>{{$train->company}}</td>
-                <td>{{$train->departure_station}}</td>
-                <td>{{$train->arrival_station}}</td>
-                <td>{{$train->departure_time}}</td>
-                <td>{{$train->arrival_time}}</td>
-                <td>{{$train->train_code}}</td>
-                <td>{{$train->number_train_carriage}}</td>
-                <td>{{$train->on_time}}</td>
-                <td>{{$train->cancelled}}</td>
-                </tr>
+                @foreach($trainDataList as $train)
                 
+                    <tr>
+                        <td>{{$train->company}}</td>
+                        <td>{{$train->departure_station}}</td>
+                        <td>{{$train->arrival_station}}</td>
+                        <td>{{$train->departure_time}}</td>
+                        <td>{{$train->arrival_time}}</td>
+                        <td>{{$train->train_code}}</td>
+                        <td>{{$train->number_train_carriage}}</td>
+                        <td>{{$train->on_time}}</td>
+                        <td>{{$train->cancelled}}</td>
+                    </tr>
+               
+                @endforeach 
             </tbody>
         </table>
-    @endforeach
 @endsection
